@@ -13,6 +13,11 @@ Built with **React, Node.js, and PrismJS** for syntax highlighting.
 
 ---
 
+## 🌐 Live Demo
+[🔗 **Check the Project Here**](https://ai-code-reviewer-frontend-4afc.onrender.com/)
+
+---
+
 ## 📸 Screenshots
 | Editor | AI Review |
 |---------|-----------|
