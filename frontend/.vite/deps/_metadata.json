@@ -2,7 +2,60 @@
   "hash": "101deb15",
   "configHash": "f47f45dc",
   "lockfileHash": "c57af586",
-  "browserHash": "45613ddb",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "917567e7",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "b780320c",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "1b3de629",
+      "needsInterop": true
+    },
+    "prismjs": {
+      "src": "../../node_modules/prismjs/prism.js",
+      "file": "prismjs.js",
+      "fileHash": "f24a4b7b",
+      "needsInterop": true
+    },
+    "react-simple-code-editor": {
+      "src": "../../node_modules/react-simple-code-editor/lib/index.js",
+      "file": "react-simple-code-editor.js",
+      "fileHash": "7605866a",
+      "needsInterop": true
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "b78fab87",
+      "needsInterop": false
+    },
+    "react-markdown": {
+      "src": "../../node_modules/react-markdown/index.js",
+      "file": "react-markdown.js",
+      "fileHash": "1a3136f4",
+      "needsInterop": false
+    },
+    "rehype-highlight": {
+      "src": "../../node_modules/rehype-highlight/index.js",
+      "file": "rehype-highlight.js",
+      "fileHash": "98146bd7",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-32EALFBN": {
+      "file": "chunk-32EALFBN.js"
+    },
+    "chunk-FCEPTDB2": {
+      "file": "chunk-FCEPTDB2.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
+    }
+  }
 }
