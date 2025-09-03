@@ -37,31 +37,34 @@ function App() {
   return (
     <main>
       <div className="left">
-          <img src={robot} alt="Robot" className="editor-bg-robot" />
+        <img src={robot} alt="Robot" className="editor-bg-robot" />
         {/* editor-wrapper handles scrolling */}
-        <div className="editor-wrapper">
-          <Editor
-            className="editor"
-            value={code}
-            placeholder="Enter your code here"
-            onValueChange={setCode}
-            highlight={(code) => prism.highlight(code, prism.languages.javascript)}
-            padding={12}
-            style={{
-              fontSize: 15,
-              fontFamily:
-                "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace",
-              whiteSpace: "pre",
-              background: "transparent",
-              color: "#fff",
-              outline: "none",
-              border: "none",
-              boxSizing: "border-box",
-              width: "100%",
-              minHeight: "100%",
-            }}
-          />
-        </div>
+       <div className="editor-wrapper">
+  {!code && (
+    <div className="editor-placeholder">Enter your code here</div>
+  )}
+  <Editor
+    className="editor"
+    value={code}
+    onValueChange={setCode}
+    highlight={(code) => prism.highlight(code, prism.languages.javascript)}
+    padding={12}
+    style={{
+      fontSize: 15,
+      fontFamily:
+        "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace",
+      whiteSpace: "pre",
+      background: "transparent",
+      color: "#fff",
+      outline: "none",
+      border: "none",
+      boxSizing: "border-box",
+      width: "100%",
+      minHeight: "100%",
+    }}
+  />
+</div>
+
 
         <div onClick={reviewCode} className="review">
           Review
@@ -75,8 +78,10 @@ function App() {
             <div className="loader" />
             <div className="loader-text">Reviewing, Please wait...</div>
           </div>
-        ) : (
+        ) : review ? (
           <Markdown rehypePlugins={[rehypeHighlight]}>{review}</Markdown>
+        ) : (
+          <div className="placeholder-text">Review your code here</div>
         )}
       </div>
     </main>
