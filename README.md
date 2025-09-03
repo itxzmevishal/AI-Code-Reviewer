@@ -22,10 +22,10 @@ Built with **React, Node.js, and PrismJS** for syntax highlighting.
 
 ## 📸 Screenshots
 
-| Editor                                     
-| ![Editor](https://github.com/itxzmevishal/AI-Code-Reviewer/blob/main/screenshots/Screenshot%20(24).png) |
+| Editor ------------------------------------------                                    
+![Editor](https://github.com/itxzmevishal/AI-Code-Reviewer/blob/main/screenshots/Screenshot%20(24).png) |
 | AI Review                                       |
-| ------------------------------------------ | ----------------------------------------------- | -------------------------------------------- |
+|  | ----------------------------------------------- | -------------------------------------------- |
 | ![Reviewing](screenshots\Screenshot (25).png)() | ![Review](screenshots\Screenshot (26).png)() |
 
 ---
