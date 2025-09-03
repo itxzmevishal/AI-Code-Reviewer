@@ -7,6 +7,7 @@ import axios from "axios";
 import Markdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
+import robot from "/robot.svg"; // Import robot image
 
 function App() {
   const [code, setCode] = useState(``);
@@ -36,6 +37,7 @@ function App() {
   return (
     <main>
       <div className="left">
+          <img src={robot} alt="Robot" className="editor-bg-robot" />
         {/* editor-wrapper handles scrolling */}
         <div className="editor-wrapper">
           <Editor
@@ -67,6 +69,7 @@ function App() {
       </div>
 
       <div className="right">
+        <img src={robot} alt="Robot" className="editor-bg-robot" />
         {loading ? (
           <div className="loader-container">
             <div className="loader" />
