@@ -24,7 +24,7 @@ Built with **React, Node.js, and PrismJS** for syntax highlighting.
 
 | Editor                                     | AI Review                                       |
 | ------------------------------------------ | ----------------------------------------------- | -------------------------------------------- |
-| ![Editor](screenshots\Screenshot (24).png) | ![Reviewing](screenshots\Screenshot (25).png)() | ![Review](screenshots\Screenshot (26).png)() |
+| ![Editor](https://github.com/itxzmevishal/AI-Code-Reviewer/blob/main/screenshots/Screenshot%20(24).png) | ![Reviewing](screenshots\Screenshot (25).png)() | ![Review](screenshots\Screenshot (26).png)() |
 
 ---
 
