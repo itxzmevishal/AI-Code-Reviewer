@@ -8,24 +8,33 @@ import Markdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import 'highlight.js/styles/github-dark.css';
 
-
-
-
 function App() {
   const [code, setCode] = useState(``);
-const [review, setReview] = useState(``)
+  const [review, setReview] = useState(``);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     prism.highlightAll();
   }, []);
 
   async function reviewCode() {
-  const response = await  axios.post('https://ai-code-reviewer-backend-1rdn.onrender.com/ai/get-review', { code } )
-  setReview(response.data)
-  
+    setLoading(true); // Loader start
+    setReview("");    // Clear previous review
+    try {
+      const response = await axios.post('http://localhost:3000/ai/get-review', { code });
+      setReview(response.data);
+    } catch (error) {
+      console.error("Error fetching review:", error);
+      setReview("❌ Error fetching review. Please try again.");
+    } finally {
+      setLoading(false); // Loader end
+    }
   }
+
   return (
     <>
       <main>
+        {/* Left Side - Code Editor */}
         <div className="left">
           <div className="code">
             <Editor
@@ -37,7 +46,6 @@ const [review, setReview] = useState(``)
               }
               padding={10}
               style={{
-                overflow: "scroll",
                 fontSize: 17,
                 border: "1px solid #ddd",
                 borderRadius: "5px",
@@ -50,9 +58,18 @@ const [review, setReview] = useState(``)
             Review
           </div>
         </div>
-        <div className="right"><Markdown 
-        rehypePlugins={[rehypeHighlight]}
-        >{review}</Markdown></div>
+
+        {/* Right Side - Review or Loader */}
+        <div className="right">
+          {loading ? (
+            <div className="loader-container">
+              <div className="loader"></div>
+              <div className="loader-text">Reviewing, Please wait...</div>
+            </div>
+          ) : (
+            <Markdown rehypePlugins={[rehypeHighlight]}>{review}</Markdown>
+          )}
+        </div>
       </main>
     </>
   );

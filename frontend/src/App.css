@@ -1,6 +1,6 @@
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -32,12 +32,12 @@ main .left {
   position: relative;
 }
 
-.left .code, 
+.left .code,
 .code pre,
 .code pre code {
-  margin:0 !important;
+  margin: 0 !important;
   height: 100%;
-  width: 100;
+  width: 100%;
   border-radius: 0.7rem;
   background-color: #0c0c0c !important;
 }
@@ -47,6 +47,7 @@ main .right {
   padding: 1rem 2rem;
   overflow: auto;
   background-color: #343434;
+  position: relative;
 }
 
 main .left .review {
@@ -59,7 +60,55 @@ main .left .review {
   font-weight: 500;
   font-family: sans-serif;
   cursor: pointer;
-  cursor: pointer;
   user-select: none;
   border-radius: 0.7rem;
+}
+
+/* Glassmorphic Loader Container */
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+/* Loader Circle */
+.loader {
+  width: 70px;
+  height: 70px;
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 6px solid aquamarine;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+/* Loader Text */
+.loader-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Spin Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
