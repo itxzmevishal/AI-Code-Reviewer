@@ -14,6 +14,10 @@ function App() {
   const [review, setReview] = useState(``);
   const [loading, setLoading] = useState(false);
 
+  // 👇 Env-based backend URL
+  const API_BASE_URL =
+    import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+
   useEffect(() => {
     prism.highlightAll();
   }, []);
@@ -22,7 +26,7 @@ function App() {
     setLoading(true);
     setReview("");
     try {
-      const response = await axios.post("http://localhost:3000/ai/get-review", {
+      const response = await axios.post(`${API_BASE_URL}/ai/get-review`, {
         code,
       });
       setReview(response.data);
@@ -39,32 +43,33 @@ function App() {
       <div className="left">
         <img src={robot} alt="Robot" className="editor-bg-robot" />
         {/* editor-wrapper handles scrolling */}
-       <div className="editor-wrapper">
-  {!code && (
-    <div className="editor-placeholder">Enter your code here</div>
-  )}
-  <Editor
-    className="editor"
-    value={code}
-    onValueChange={setCode}
-    highlight={(code) => prism.highlight(code, prism.languages.javascript)}
-    padding={12}
-    style={{
-      fontSize: 15,
-      fontFamily:
-        "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace",
-      whiteSpace: "pre",
-      background: "transparent",
-      color: "#fff",
-      outline: "none",
-      border: "none",
-      boxSizing: "border-box",
-      width: "100%",
-      minHeight: "100%",
-    }}
-  />
-</div>
-
+        <div className="editor-wrapper">
+          {!code && (
+            <div className="editor-placeholder">Enter your code here</div>
+          )}
+          <Editor
+            className="editor"
+            value={code}
+            onValueChange={setCode}
+            highlight={(code) =>
+              prism.highlight(code, prism.languages.javascript, "javascript")
+            }
+            padding={12}
+            style={{
+              fontSize: 15,
+              fontFamily:
+                "ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace",
+              whiteSpace: "pre",
+              background: "transparent",
+              color: "#fff",
+              outline: "none",
+              border: "none",
+              boxSizing: "border-box",
+              width: "100%",
+              minHeight: "100%",
+            }}
+          />
+        </div>
 
         <div onClick={reviewCode} className="review">
           Review
