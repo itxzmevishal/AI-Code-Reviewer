@@ -1,9 +1,16 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const aiController = require('../controllers/ai.controller');
 
+// Example POST route
+router.post("/get-review", (req, res) => {
+  const { code } = req.body;
 
-router.post('/get-review', aiController.getReview);
+  // Placeholder response (yahan tu apna AI logic add karega)
+  if (!code) {
+    return res.status(400).json("❌ No code provided.");
+  }
 
+  res.json(`✅ Review for your code:\n\nLooks good!`);
+});
 
 module.exports = router;

@@ -1,7 +1,7 @@
 require("dotenv").config();
 const app = require("./src/app");
 
-// Render (or other hosting) ke liye dynamic port use karo
+// Render ke liye dynamic PORT (important)
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {

@@ -14,7 +14,7 @@ function App() {
   const [review, setReview] = useState(``);
   const [loading, setLoading] = useState(false);
 
-  // 👇 Env-based backend URL
+  // ✅ Env-based backend URL
   const API_BASE_URL =
     import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
 
@@ -42,7 +42,6 @@ function App() {
     <main>
       <div className="left">
         <img src={robot} alt="Robot" className="editor-bg-robot" />
-        {/* editor-wrapper handles scrolling */}
         <div className="editor-wrapper">
           {!code && (
             <div className="editor-placeholder">Enter your code here</div>

@@ -4,15 +4,18 @@ const cors = require("cors");
 
 const app = express();
 
-// ✅ CORS middleware
+app.use(express.json());
+
+// ✅ CORS config (local + Render frontend dono allowed)
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://your-frontend.onrender.com"],
+    origin: [
+      "http://localhost:5173",                  // local dev
+      "https://ai-code-reviewer-frontend.onrender.com" // apna frontend URL (replace!)
+    ],
     methods: ["GET", "POST"],
   })
 );
-
-app.use(express.json());
 
 // ✅ Test route
 app.get("/", (req, res) => {
